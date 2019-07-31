@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ApodCard.scss";
+import Heart from "./Heart.js";
 
 function ApodCard(props) {
   // console.log(props.url);
@@ -15,7 +16,7 @@ function ApodCard(props) {
         {props.copyright} ({props.date})
       </h3>
       <img src={props.url} alt={props.explanation} />
-      <h3 className="date" />
+      <Heart />
       <button onClick={handleReadMoreClick}>Read More</button>
       <h3 className={wantingToReadMore ? "read-more" : "remove"}>
         {props.explanation}
