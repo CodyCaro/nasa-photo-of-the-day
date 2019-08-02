@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./ApodCard.scss";
+import { Button, Card, Image } from "semantic-ui-react";
 import Heart from "./Heart.js";
 
 function ApodCard(props) {
@@ -10,18 +11,24 @@ function ApodCard(props) {
     setWantingToReadMore(!wantingToReadMore);
   }
   return (
-    <div className="card">
-      <h2>{props.title}</h2>
-      <h3>
-        {props.copyright} ({props.date})
-      </h3>
-      <img src={props.url} alt={props.explanation} />
-      <Heart />
-      <button onClick={handleReadMoreClick}>Read More</button>
-      <h3 className={wantingToReadMore ? "read-more" : "remove"}>
-        {props.explanation}
-      </h3>
-    </div>
+    <Card>
+      <Image src={props.url} wrapped ui={false} alt={props.title} />
+      <Card.Content>
+        <Card.Header>{props.title}</Card.Header>
+        <Card.Meta>
+          <span className="date">
+            {props.copyright} ({props.date})
+          </span>
+        </Card.Meta>
+        <Heart />
+        <Button onClick={handleReadMoreClick}>Read More</Button>
+        <Card.Description
+          className={wantingToReadMore ? "read-more" : "remove"}
+        >
+          {props.explanation}
+        </Card.Description>
+      </Card.Content>
+    </Card>
   );
 }
 
