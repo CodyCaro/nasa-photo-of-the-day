@@ -11,24 +11,26 @@ function ApodCard(props) {
     setWantingToReadMore(!wantingToReadMore);
   }
   return (
-    <Card>
-      <Image src={props.url} wrapped ui={false} alt={props.title} />
-      <Card.Content>
-        <Card.Header>{props.title}</Card.Header>
-        <Card.Meta>
-          <span className="date">
-            {props.copyright} ({props.date})
-          </span>
-        </Card.Meta>
-        <Heart />
-        <Button onClick={handleReadMoreClick}>Read More</Button>
-        <Card.Description
-          className={wantingToReadMore ? "read-more" : "remove"}
-        >
-          {props.explanation}
-        </Card.Description>
-      </Card.Content>
-    </Card>
+    <div>
+      <Card>
+        <Image src={props.url} wrapped ui={false} alt={props.title} />
+        <Card.Content>
+          <Card.Header>{props.title}</Card.Header>
+          <Card.Meta>
+            <span className="date">
+              {props.copyright} ({props.date})
+            </span>
+          </Card.Meta>
+          <Heart />
+          <Button onClick={handleReadMoreClick}>Read More</Button>
+          <Card.Description
+            className={wantingToReadMore ? "read-more" : "remove"}
+          >
+            {props.explanation}
+          </Card.Description>
+        </Card.Content>
+      </Card>
+    </div>
   );
 }
 
