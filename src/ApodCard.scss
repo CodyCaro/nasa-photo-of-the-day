@@ -1,0 +1,29 @@
+div {
+  padding-top: 10px;
+}
+
+.ui.card {
+  width: 33%;
+  margin: 50px auto 150px auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .ui.button {
+    margin: 25px auto 25px auto;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    border-radius: 15px;
+    padding: 10px 15px;
+  }
+
+  .remove {
+    display: none;
+  }
+
+  .read-more {
+    font-size: 1rem;
+    margin: auto 5% 25px 5%;
+    line-height: 2.25rem;
+    text-align: center;
+  }
+}
